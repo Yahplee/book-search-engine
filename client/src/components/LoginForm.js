@@ -29,7 +29,7 @@ const LoginForm = () => {
 
 		try {
 			const { data } = await login({
-				variables: { ...formState },
+				variables: { ...userFormData },
 			});
 
 			Auth.login(data.login.token);
@@ -92,8 +92,6 @@ const LoginForm = () => {
 					Submit
 				</Button>
 			</Form>
-
-			{error && <div>Login failed</div>}
 		</>
 	);
 };
